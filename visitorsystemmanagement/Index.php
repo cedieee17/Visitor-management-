@@ -7,20 +7,20 @@ Try {
  $pdoConnect->setAttribute (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if (isset($_POST["login"])) {
-if (empty($_POST["Email"]) || empty($_POST["Password"])) { 
+if (empty($_POST["UserName"]) || empty($_POST[“Password”])) { 
 $message = '<label> All fields are required </label>';
  } else {
 
-$pdoQuery = "SELECT * FROM dbtest WHERE Email :Email";
-$pdoResult = $pdoConnect->prepare($pdoQuery);
-$pdoResult->execute(['Email' => $_POST["Email"]]);
+$pdoQuery = "SELECT * FROM dbtest WHERE UserName :UserName";
+$pdoResult = SpdoConnect->prepare($pdoQuery);
+$pdoResult->execute(['UserName' => $_POST[“UserName”]]);
 
 $user = SpdoResult->fetch();
 
 If ($user && password_verify($_POST["Password"], $user["Password"])) { 
-    $_SESSION["Email"] = $_POST["Email"];
+    $_SESSION["UserName"] = $_POST["UserName"];
 
-$loggedInUser = $_SESSION["Email"];
+$loggedInUser = $_SESSION["UserName"];
 $pdoQuery = "INSERT INTO audit_trail('action', 'user') VALUES ('User logged in', :user)"; 
 $pdoResult = $pdoConnect->prepare($pdoQuery); 
 $pdoResult->execute([':user' => $loggedInUser]);
@@ -31,7 +31,7 @@ $message = '<label>Wrong data</label>';
 }
 }
 } catch (PDOException $error) {
-$message = $error ->getMessage();
+$message = $error ->getmessage();
 }
 
 
@@ -39,7 +39,7 @@ $message = $error ->getMessage();
 <!DOCTYPE html>
 <html>
 <head>
-<title>VISITOR SYSTEM MANAGEMENT</title>
+<title>PHP PDO Simple Login</title>
 <link rel=”stylesheet” type=”text/css” href=”./Include/Styles/Styles.css”>
 </head>
 <body>
@@ -52,18 +52,17 @@ If (isset($message)) {
 Echo '<label>'.$message.'</label>';
 }
 ?>
-<h3 Align=””>VISITOR SYSTEM MANAGEMENT</h3><br/>
+<h3 Align=””>Login</h3><br/>
 <form method=”post”>
 Username
-<input type=”text” name="Email">
+<input type=”text” name=”UserName”>
 <br />
 Password
-<input type=”password” name=”Password”>
+<input type=”password” name=”Password”> <!—Use type=”password” for password input 
 <br />
-<input type="submit" name="login" value="Login">
+<input type="submit" name="login" value=Login>
 </form>
-
-<a href="register.php">  Add user</a>
+<a href="register.php"> Register </a>
 </div>
 <br>
 </body>
