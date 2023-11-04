@@ -5,7 +5,7 @@ require_once './Include/Connect/dbcon.php';
 
 try {
 
-SpdoConnect->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
+$pdoConnect->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
 
 if (isset($_POST["register"])) {
 
@@ -14,11 +14,11 @@ $Password = password_hash($_POST['regPassword'], PASSWORD_DEFAULT);
 
 $FullName = $_POST['regFullName'];
 
-$pdoQuery= "INSERT INTO 'tbuser (UserName, 'Password', 'FullName') VALUES (:UserName, :Password, :FullName)";
+$pdoQuery= "INSERT INTO 'student (UserName, 'Password', 'FullName') VALUES (:UserName, :Password, :FullName)";
 
 $pdoResult = $pdoConnect->prepare($pdoQuery);
 
-$pdoExec $pdoResult->execute([
+$pdoExec = $pdoResult->execute([
 
 ":UserName" => $UserName,
 
@@ -57,8 +57,6 @@ $message = $error->getMessage();
 <div class="container">
 
 <title>User Registration</title>
-
-<p>This is the User Registration page for your project. You can customize It as needed.</p>
 
 </div>
 
