@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('harap.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    }
+    .container{
+    width: 600px;
+    height: 700px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    }
+    .box{
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    }
+    h3{
+    font-size: 35px;
+    margin: 15px;
+    }
+    .name{
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+    }
+    .name i{
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #bbb;
+    }
+    .name input{
+    width: 100%;
+    padding: 20px 60px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background-color: #eee;
+    border-radius: 40px;
+    }
+    .name input::placeholder{
+    color: #bbb;
+    font-weight: 500 ;
+    }
+    .email{
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+    }
+    .email i{
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #bbb;
+    }
+    .email input{
+    width: 100%;
+    padding: 20px 60px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background-color: #eee;
+    border-radius: 40px;
+    }
+    .email input::placeholder{
+    color: #bbb;
+    font-weight: 500 ;
+    }
+    .number{
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+    }
+    .number i{
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #bbb;
+    }
+    .number input{
+    width: 100%;
+    padding: 20px 60px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background-color: #eee;
+    border-radius: 40px;
+    }
+    .number input::placeholder{
+    color: #bbb;
+    font-weight: 500 ;
+    }
+    .message-box{
+    width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+    }
+    .message-box i{
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #bbb;
+    }
+    .message-box textarea{
+    width: 100%;
+    padding: 20px 60px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    background-color: #eee;
+    border-radius: 40px;
+    }
+    .message-box textarea::placeholder{
+    color: #bbb;
+    font-weight: 500 ;
+    }
+    
+    .button{
+       width: 100%;
+       cursor: pointer;
+       margin-bottom: 20px;
+    }
+    .button button{
+       width: 100%;
+       padding: 10px;
+       font-size: 20px;
+       color: #fff;
+       background-color: bisque;
+       border: none;
+       outline: none;
+       border-radius: 40px;
+       cursor: pointer;
+    }
+    
+    .message{
+    width: 100%;
+    position: relative;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+    }
+    .message .success{
+    font-size: 20px;
+    color:aqua;
+    position: absolute;
+    animation: buttons .3s linear;
+    display: none;
+    }
+    .message .danger{
+    font-size: 20px;
+    color: red;
+    position: absolute;
+    transition: .3s;
+    animation: button .3s linear;
+    display: none;
+    }
+    @keyframes buttons{
+    0%{
+        transform: scale(0.1);
+    }
+    50%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+    }
